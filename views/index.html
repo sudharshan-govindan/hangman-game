@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!--  <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBM</title>
+    <link rel="stylesheet" type="text/css" href="views/style.css" />
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter|Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="views/script.js"></script>
+  <script>window.onload = draw;</script>
+</head>
+
+<body>
+    <div id="introPage">
+        <div id="introText">
+            <p>Welcome to online hangman!</p>
+            <p>Select start to begin!</p><br>
+           <span class="userEntry">
+            Enter your email id<br>
+            <input type="email" id="cloudemailtest" name="cloudemailtest" placeholder="Please enter your Email ID" required>
+          </span>
+            <div id="buttonContainer">
+              <input id="sp" type="submit" value="Start" onclick="sp()">
+            </div>
+        </div>
+
+
+
+
+
+
+        <!--<canvas id="homeHangman" width="300px" height="300px"></canvas>-->
+    </div>
+
+    <div id="singlePage">
+        <p>Pick a category:</p>
+        <div id="categoryHolder">
+            <div id="category">
+                <div id="category1">
+                    <!--<div id="phrases" onclick="phrase()">Phrases</div>-->
+                    <div id="movies" onclick="movie()">Movies</div>
+                    <div id="songs" onclick="song()">Songs</div>
+                </div>
+                <div id="category2">
+                    <!--<div id="songs" onclick="song()">Songs</div>-->
+                    <!--<div id="challenge" onclick="challenge()">Challenge</div>-->
+                </div>
+            </div>
+            <!--<div id="mp1" onclick="mp()">Multiplayer</div>-->
+        </div>
+    </div>
+    <div id="multiPage">
+        <div id="wordInput">
+            <div id="multiText">
+                <p>The phrase guesser should look away from the screen now.</p>
+                <p>Phrase creator, type your phrase and click submit!</p>
+            </div>
+            <div id="inputContainer">
+                <textarea id="input" cols="40" rows="5" onkeyup = "countChars('input','charcount');" onkeydown = "countChars('input','charcount');" onmouseout = "countChars('input','charcount');"></textarea>
+                <span id="restriction">Only special characters allowed: <span style="font-weight: 700;">? ! , . ' &ndash;</span></span>
+            </div>
+            <div id="characterCount">
+                <p id="charContain">
+                    <span id="charcount">0</span>/100 characters
+                </p>
+                <div id="submit" onclick="readText()">Submit</div>
+            </div>
+            <div id="sp1" onclick="sp()">Single player</div>
+        </div>
+    </div>
+    <div id="gamePage">
+        <p id="categoryName"></p>
+        <div id="wordWrap">
+            <div id="underline1">
+                <div id="letter1"></div>
+            </div>
+            <div id="underline2">
+                <div id="letter2"></div>
+            </div>
+            <div id="underline3">
+                <div id="letter3"></div>
+            </div>
+            <div id="underline4">
+                <div id="letter4"></div>
+            </div>
+            <div id="underline5">
+                <div id="letter5"></div>
+            </div>
+            <div id="underline6">
+                <div id="letter6"></div>
+            </div>
+            <div id="underline7">
+                <div id="letter7"></div>
+            </div>
+            <div id="underline8">
+                <div id="letter8"></div>
+            </div>
+            <div id="underline9">
+                <div id="letter9"></div>
+            </div>
+            <div id="underline10">
+                <div id="letter10"></div>
+            </div>
+            <div id="underline11">
+                <div id="letter11"></div>
+            </div>
+            <div id="underline12">
+                <div id="letter12"></div>
+            </div>
+            <div id="underline13">
+                <div id="letter13"></div>
+            </div>
+            <div id="underline14">
+                <div id="letter14"></div>
+            </div>
+            <div id="underline15">
+                <div id="letter15"></div>
+            </div>
+            <div id="underline16">
+                <div id="letter16"></div>
+            </div>
+            <div id="underline17">
+                <div id="letter17"></div>
+            </div>
+            <div id="underline18">
+                <div id="letter18"></div>
+            </div>
+            <div id="underline19">
+                <div id="letter19"></div>
+            </div>
+            <div id="underline20">
+                <div id="letter20"></div>
+            </div>
+            <div id="underline21">
+                <div id="letter21"></div>
+            </div>
+            <div id="underline22">
+                <div id="letter22"></div>
+            </div>
+            <div id="underline23">
+                <div id="letter23"></div>
+            </div>
+            <div id="underline24">
+                <div id="letter24"></div>
+            </div>
+            <div id="underline25">
+                <div id="letter25"></div>
+            </div>
+            <div id="underline26">
+                <div id="letter26"></div>
+            </div>
+            <div id="underline27">
+                <div id="letter27"></div>
+            </div>
+            <div id="underline28">
+                <div id="letter28"></div>
+            </div>
+            <div id="underline29">
+                <div id="letter29"></div>
+            </div>
+            <div id="underline30">
+                <div id="letter30"></div>
+            </div>
+            <div id="underline31">
+                <div id="letter31"></div>
+            </div>
+            <div id="underline32">
+                <div id="letter32"></div>
+            </div>
+            <div id="underline33">
+                <div id="letter33"></div>
+            </div>
+            <div id="underline34">
+                <div id="letter34"></div>
+            </div>
+            <div id="underline35">
+                <div id="letter35"></div>
+            </div>
+            <div id="underline36">
+                <div id="letter36"></div>
+            </div>
+            <div id="underline37">
+                <div id="letter37"></div>
+            </div>
+            <div id="underline38">
+                <div id="letter38"></div>
+            </div>
+            <div id="underline39">
+                <div id="letter39"></div>
+            </div>
+            <div id="underline40">
+                <div id="letter40"></div>
+            </div>
+            <div id="underline41">
+                <div id="letter41"></div>
+            </div>
+            <div id="underline42">
+                <div id="letter42"></div>
+            </div>
+            <div id="underline43">
+                <div id="letter43"></div>
+            </div>
+            <div id="underline44">
+                <div id="letter44"></div>
+            </div>
+            <div id="underline45">
+                <div id="letter45"></div>
+            </div>
+            <div id="underline46">
+                <div id="letter46"></div>
+            </div>
+            <div id="underline47">
+                <div id="letter47"></div>
+            </div>
+            <div id="underline48">
+                <div id="letter48"></div>
+            </div>
+            <div id="underline49">
+                <div id="letter49"></div>
+            </div>
+            <div id="underline50">
+                <div id="letter50"></div>
+            </div>
+            <div id="underline51">
+                <div id="letter51"></div>
+            </div>
+            <div id="underline52">
+                <div id="letter52"></div>
+            </div>
+            <div id="underline53">
+                <div id="letter53"></div>
+            </div>
+            <div id="underline54">
+                <div id="letter54"></div>
+            </div>
+            <div id="underline55">
+                <div id="letter55"></div>
+            </div>
+            <div id="underline56">
+                <div id="letter56"></div>
+            </div>
+            <div id="underline57">
+                <div id="letter57"></div>
+            </div>
+            <div id="underline58">
+                <div id="letter58"></div>
+            </div>
+            <div id="underline59">
+                <div id="letter59"></div>
+            </div>
+            <div id="underline60">
+                <div id="letter60"></div>
+            </div>
+            <div id="underline61">
+                <div id="letter61"></div>
+            </div>
+            <div id="underline62">
+                <div id="letter62"></div>
+            </div>
+            <div id="underline63">
+                <div id="letter63"></div>
+            </div>
+            <div id="underline64">
+                <div id="letter64"></div>
+            </div>
+            <div id="underline65">
+                <div id="letter65"></div>
+            </div>
+            <div id="underline66">
+                <div id="letter66"></div>
+            </div>
+            <div id="underline67">
+                <div id="letter67"></div>
+            </div>
+            <div id="underline68">
+                <div id="letter68"></div>
+            </div>
+            <div id="underline69">
+                <div id="letter69"></div>
+            </div>
+            <div id="underline70">
+                <div id="letter70"></div>
+            </div>
+            <div id="underline71">
+                <div id="letter71"></div>
+            </div>
+            <div id="underline72">
+                <div id="letter72"></div>
+            </div>
+            <div id="underline73">
+                <div id="letter73"></div>
+            </div>
+            <div id="underline74">
+                <div id="letter74"></div>
+            </div>
+            <div id="underline75">
+                <div id="letter75"></div>
+            </div>
+            <div id="underline76">
+                <div id="letter76"></div>
+            </div>
+            <div id="underline77">
+                <div id="letter77"></div>
+            </div>
+            <div id="underline78">
+                <div id="letter78"></div>
+            </div>
+            <div id="underline79">
+                <div id="letter79"></div>
+            </div>
+            <div id="underline80">
+                <div id="letter80"></div>
+            </div>
+            <div id="underline81">
+                <div id="letter81"></div>
+            </div>
+            <div id="underline82">
+                <div id="letter82"></div>
+            </div>
+            <div id="underline83">
+                <div id="letter83"></div>
+            </div>
+            <div id="underline84">
+                <div id="letter84"></div>
+            </div>
+            <div id="underline85">
+                <div id="letter85"></div>
+            </div>
+            <div id="underline86">
+                <div id="letter86"></div>
+            </div>
+            <div id="underline87">
+                <div id="letter87"></div>
+            </div>
+            <div id="underline88">
+                <div id="letter88"></div>
+            </div>
+            <div id="underline89">
+                <div id="letter89"></div>
+            </div>
+            <div id="underline90">
+                <div id="letter90"></div>
+            </div>
+            <div id="underline91">
+                <div id="letter91"></div>
+            </div>
+            <div id="underline92">
+                <div id="letter92"></div>
+            </div>
+            <div id="underline93">
+                <div id="letter93"></div>
+            </div>
+            <div id="underline94">
+                <div id="letter94"></div>
+            </div>
+            <div id="underline95">
+                <div id="letter95"></div>
+            </div>
+            <div id="underline96">
+                <div id="letter96"></div>
+            </div>
+            <div id="underline97">
+                <div id="letter97"></div>
+            </div>
+            <div id="underline98">
+                <div id="letter98"></div>
+            </div>
+            <div id="underline99">
+                <div id="letter99"></div>
+            </div>
+            <div id="underline100">
+                <div id="letter100"></div>
+            </div>
+        </div>
+        <canvas id="hangman" width="300px" height="300px"></canvas>
+        <div id="results"></div>
+        <div id="letterBank">
+                <div id="a" value="A" onclick="guessLetter()">A</div><div id="b" value="B" onclick="guessLetter()">B</div><div id="c" value="C" onclick="guessLetter()">C</div><div id="d" value="D" onclick="guessLetter()">D</div><div id="e" value="E" onclick="guessLetter()">E</div><div id="f" value="F" onclick="guessLetter()">F</div><div id="g" value="G" onclick="guessLetter()">G</div><div id="h" value="H" onclick="guessLetter()">H</div><div id="i" value="I" onclick="guessLetter()">I</div><div id="j" value="J" onclick="guessLetter()">J</div><div id="k" value="K" onclick="guessLetter()">K</div><div id="l" value="L" onclick="guessLetter()">L</div><div id="m" value="M" onclick="guessLetter()">M</div><div id="n" value="N" onclick="guessLetter()">N</div><div id="o" value="O" onclick="guessLetter()">O</div><div id="p" value="P" onclick="guessLetter()">P</div><div id="q" value="Q" onclick="guessLetter()">Q</div><div id="r" value="R" onclick="guessLetter()">R</div><div id="s" value="S" onclick="guessLetter()">S</div><div id="t" value="T" onclick="guessLetter()">T</div><div id="u" value="U" onclick="guessLetter()">U</div><div id="v" value="V" onclick="guessLetter()">V</div><div id="w" value="W" onclick="guessLetter()">W</div><div id="x" value="X" onclick="guessLetter()">X</div><div id="y" value="Y" onclick="guessLetter()">Y</div><div id="z" value="Z" onclick="guessLetter()">Z</div>
+        </div>
+        <div id="challengeBank">
+                <div id="a" value="A" onclick="challengeGuess()">A</div><div id="b" value="B" onclick="challengeGuess()">B</div><div id="c" value="C" onclick="challengeGuess()">C</div><div id="d" value="D" onclick="challengeGuess()">D</div><div id="e" value="E" onclick="challengeGuess()">E</div><div id="f" value="F" onclick="challengeGuess()">F</div><div id="g" value="G" onclick="challengeGuess()">G</div><div id="h" value="H" onclick="challengeGuess()">H</div><div id="i" value="I" onclick="challengeGuess()">I</div><div id="j" value="J" onclick="challengeGuess()">J</div><div id="k" value="K" onclick="challengeGuess()">K</div><div id="l" value="L" onclick="challengeGuess()">L</div><div id="m" value="M" onclick="challengeGuess()">M</div><div id="n" value="N" onclick="challengeGuess()">N</div><div id="o" value="O" onclick="challengeGuess()">O</div><div id="p" value="P" onclick="challengeGuess()">P</div><div id="q" value="Q" onclick="challengeGuess()">Q</div><div id="r" value="R" onclick="challengeGuess()">R</div><div id="s" value="S" onclick="challengeGuess()">S</div><div id="t" value="T" onclick="challengeGuess()">T</div><div id="u" value="U" onclick="challengeGuess()">U</div><div id="v" value="V" onclick="challengeGuess()">V</div><div id="w" value="W" onclick="challengeGuess()">W</div><div id="x" value="X" onclick="challengeGuess()">X</div><div id="y" value="Y" onclick="challengeGuess()">Y</div><div id="z" value="Z" onclick="challengeGuess()">Z</div>
+        </div>
+        <!--<div id="again" onClick="reset()">Play again!</div>
+        <div id="home" onClick="window.location.reload()">Main menu</div>
+        <p id="vidSent">Click <span id="vidLink" onClick="video()">here</span> to watch and learn how this website functions.</p>-->
+    </div>
+    <!--<div id="videoPage">
+        <p id="vidHead">How this website works</p>
+        <iframe id ="video" width="800" height="450" src="https://www.youtube.com/embed/ZtNyfGyS00M" frameborder="0" allowfullscreen></iframe>
+        <iframe id ="videoTab" width="500" height="280" src="https://www.youtube.com/embed/ZtNyfGyS00M" frameborder="0" allowfullscreen></iframe>
+        <iframe id ="videoMob" width="300" height="170" src="https://www.youtube.com/embed/ZtNyfGyS00M" frameborder="0" allowfullscreen></iframe>
+        <p id="vidCaption"><i>Click <a href="https://youtu.be/ZtNyfGyS00M" target="_blank">here</a> to view this video in a separate tab.</i></p>
+        <div id="home1" onClick="window.location.reload()">Main menu</div>
+    </div>-->
+</body>
+</html>

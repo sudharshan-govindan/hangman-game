@@ -1,1 +1,1 @@
-# hangman-game
+# Hangman App
